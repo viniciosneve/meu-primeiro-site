@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    {% block head %}
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'inicio.css') }}">
+    <title>{% block title %}{% endblock %} site</title>
+
+    {% endblock %}
+</head>
+<body>
+    <h1>Bem vindo ao meu site sintasse a vontade de curti todas as nossas coisas.</h1>
+    
+    <button type="button" class="botão">
+        <a href="http://127.0.0.1:5000/site/login/" class="links">Logar</a>
+    </button>
+    <br>
+    <button type="button" class="botão">
+        <a href="http://127.0.0.1:5000/site/cadastro/" class="links">Cadastrar</a>
+    </button>
+</body>
+</html>

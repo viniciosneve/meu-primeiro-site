@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+body{
+    background-image: url("https://i.pinimg.com/originals/91/f9/1a/91f91aa2f68132964a4f5334033b604e.jpg");
+    padding: 0px;
+    margin: 0px;
+}
+
+h1{
+    color: rgba(8, 8, 214, 0.493);
+    background-color: rgba(29, 29, 75, 0.432);
+}
+
+.botão{
+    background-color: rgb(255, 0, 0);
+
+    border: 5px solid rgb(172, 5, 5);
+    padding: 0px;
+    margin-top: 3px;
+
+    width: 100px;
+    height: 100%;
+    }
+
+.botão:hover{
+    background-color: rgb(172, 5, 5);
+    transition: 0.1s;
+}
+
+a{
+    display: block;
+
+    text-decoration: none;
+    color: rgb(109, 45, 45);
+
+    margin: 0px;
+}

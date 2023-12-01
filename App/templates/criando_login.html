@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='pagina_login.css') }}">
+    <title>Criando conta</title>
+</head>
+<body>
+    <h1>Aqui você vai fazer o seu login, mas ainda não está pronto.</h1>
+
+    <form action="http://127.0.0.1:5000/site/check_criate_login" method="post">
+        <input type="text" name="nome" placeholder= "qual é o seu nome">
+        <p>Aqui você pode colocar o seu nome ou um apelido para facil identificação</p>
+
+        <input type="text" name="login" placeholder="crie aqui o seu login">
+        {% if aviso == False %}
+        <p>coloca qualquer coisas e essa coisa vai ser o seu login, exemplo: nigos</p>
+
+        {% elif aviso == True %}
+        <p>Este apelido já existe</p>
+        {% set aviso= False %}
+
+        {% endif %}
+
+        <input type="password" name="senha" placeholder="crie uma senha">
+        <p>Coloque uma senha diferente, de uma que você já fez</p>
+        <br>
+
+        {% if preenchimento == False %}
+        <p></p>
+        {% elif preenchimento == True %}
+        <p>!!!Por favor, certifique-se de preencher tudo!!!</p>
+        {% endif %}
+
+        <br>
+        <button type="submit">enviar</button>
+     </form>
+
+    <button class= "botão_login">
+        <a href="http://127.0.0.1:5000/site/login">Logar</a>
+    </button>
+
+    <br>
+    
+    <button class= "botão_site">
+        <a href="http://127.0.0.1:5000/site">Voltar</a>
+    </button>
+</body>
+</html>

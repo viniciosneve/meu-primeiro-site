@@ -1,0 +1,29 @@
+@charset "UTF-8";
+
+#lista_usuarios{
+    text-decoration: none;
+    color: black;
+}
+
+#muda_cor{
+    text-decoration: none;
+}
+
+#publis{
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.texto{
+    display: block;
+
+    width: 400px;
+    height: 100%;
+
+    padding: 20px;
+    margin-top: 20px;
+
+    text-align: left;
+    
+    word-break: break-all;
+}

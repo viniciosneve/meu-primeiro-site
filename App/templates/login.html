@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logando</title>
+</head>
+<body>
+    <h1>Acesse a sua conta</h1>
+
+    <form action="http://127.0.0.1:5000/site/chack_user/" method="post">
+        {% if aviso == False %}
+        <p>coloque a sua senha e o login</p>
+        {% elif aviso == True %}
+        <p>Senha ou login errado</p>
+        {% endif %}
+        <input type="text" name="login" placeholder="Digite aqui o seu apelido/loguin">
+        <br>
+        <input type="password" name="senha" placeholder="Digite aqui a sua senha">
+        <br>
+        <button type="submit">enviar</button>
+    </form>
+
+    <button class="botão">
+        <a href="http://127.0.0.1:5000/site/cadastro">Cadastrar</a>
+    </button>
+    <br>
+    <button class="botão">
+        <a href="http://127.0.0.1:5000/site">Voltar</a>
+    </button>
+</body>
+</html>

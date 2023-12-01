@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename= 'logado.css') }}">
+    <title>logado</title>
+</head>
+<body style="background-color: rgb({{ R }}, {{ G }}, {{ B }});">
+    <h1>VOCÊ ESTÁ LOGADO</h1>
+    <div>
+        <button type="button">
+            <a href="http://127.0.0.1:5000/site/deslogando/conta/">
+                Deslogar
+            </a>
+        </button>
+    </div>
+    
+    <form action="http://127.0.0.1:5000/site/pegando/publi/usuario/", method="post">
+        <input type="text", name="publi", placeholder="Digite aqui o seu comentario e a publique">
+        <button type="submit">enviar</button>
+    </form>
+
+    <button type="reset">
+        <a href="/site/lista/usuarios/" id="lista_usuarios">Mostrar ususarios</a>
+    </button>
+    
+    {% if mostrar_lista == true %}
+    <ul>
+    {% for item in lista_usuarios %}
+        <li>{{ item.name }}</li>
+    {% endfor %}
+    </ul>
+    {% elif mostrar_lista == false %}
+    <p>...</p>
+    {% endif %}
+
+    <button type="button">
+        <a style="color: rgb({{ R }}, {{ G }}, {{ B }});"  id="muda_cor" href="http://127.0.0.1:5000/site/mudando/cor/">
+            Mudar cor de fundo do site
+        </a>
+    </button>
+
+    <ul>
+        <div id="publis">
+            {% for publi in lista_publicacao %}
+                <p class= 'texto' style="border: 5px; border-color: rgb({{ R }}, {{ G }}, {{ B }}, 0.300);">{{ publi.post }}</p>
+                <p>{{ publi.id_usuario }}</p>
+            {% endfor %}
+        </div>
+    </ul>
+</body>
+</html>
